@@ -1,39 +1,957 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --color-assiganto-header-info: #1e4b8a;
+  --color-assiganto-header-seperation: #3b4149;
+  --color-assiganto-header-main: #e0e7e8;
+  --color-assiganto-search-background: #febd69;
+  --color-assiganto-another-yellow:#ffeb83;
+  --color-assiganto-header-bottom:   #2a95d1;
+  --color-assiganto-header-bottom-drop-down-menu: #131921;
+  --color-assiganto-home-wrapper: #f5f5f7;
+  --color-assiganto-footer: #1e4b8a;
+  --color-assiganto-newsletter-button-background: #febd69;
+  --color-assiganto-product-hilighter:#bf4800;
+  --color-blog-date: #777777;
+  --color-assiganto-product-price: #1c1c1b;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-family: "Rubik", sans-serif;
+}
+.section-heading{
+  font-size: 26px;
+  line-height: 32px;
+  font-weight: 500;
+}
+.logo{
+  width: 200px;
+  height: 80px;
+}
+.header-options{
+  display:flex;
+   align-items: center; 
+   color: #1e4b8a;
+}
+.header-options-icons{
+  font-size: 16px;
+  color: #1e4b8a;
+}
+.shopping-badge{
+  border-radius: 10px;
+  color: var(--color-assiganto-search-background);
+}
+.card-wrapper {
+  background-color: white;
+  box-shadow: 0 0 10px #0000001a;
+  padding: 15px;
+  margin-bottom: 30px;
+}
+a {
+  text-decoration: none;
+  display: inline-block;
+}
+.form-control:focus{
+  box-shadow: none;
+  border-color: inherit;
+}
+.gap-5{
+  gap: 5px;
+}
+.gap-10{
+  gap: 10px;
+}
+.gap-15{
+  gap: 15px;
+}
+.gap-30{
+  gap: 30px;
+}
+.button{
+  background-color: var(--color-assiganto-header-bottom);
+  color: white;
+  font-size: 14px;
+  padding: 13px 33px;
+  border-radius: 25px;
+}
+.buttonBusiness{
+  background-color: var(--color-assiganto-header-bottom);
+  color: white;
+  font-size: 14px;
+  width: max-content;
+  padding: 13px 33px;
+  border-radius: 25px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-float infinite 3s ease-in-out;
-  }
+.button:hover{
+  background-color: var(--color-assiganto-search-background);
+  color: var(--color-assiganto-header-main);
+}
+.buttonBusiness:hover{
+  background-color: var(--color-assiganto-search-background);
+  color: var(--color-assiganto-header-main);
+}
+/* Header Part */
+.header-top-strip {
+  border-bottom: 1px solid var(--color-assiganto-header-seperation);
+  background-color: var(--color-assiganto-header-info);
+}
+.header-upper{
+  background-color: var(--color-assiganto-header-main);
+}
+.header-upper .input-group-text{
+  background-color: var(--color-assiganto-search-background);
+}
+.header-upper .header-upper-links img {
+  height: 30px;
+  width: 30px;
+  background-color: white;
+}
+.header-bottom{
+  background-color: var(--color-assiganto-header-bottom);;
+}
+.header-bottom .menu-links a,
+.header-bottom .dropdown button{
+  color: white;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 400;
+  letter-spacing: 0.3;
+  text-transform: uppercase;
+}
+.header-bottom .dropdown button::before{
+  contain:("../public");
+}
+.header-bottom .dropdown button:focus{
+  box-shadow: none;
+}
+.header-bottom .dropdown-menu{
+  background-color: var(--color-assiganto-header-bottom-drop-down-menu);
+  width: 100%;
+  transform: translate3d(0px, 57px, 0px) !important;
+}
+.header-bottom .dropdown-item {
+  padding: 20px;
+  margin-bottom: 3px;
+  border-bottom: 1px solid var(--color-assiganto-header-seperation);
+}
+.header-bottom .dropdown-item:hover{
+  background-color: transparent;
+  color: var(--color-assiganto-search-background) !important;
 }
 
-.App-header {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+.account-popover {
+  box-shadow: 0 0 10px #0000001a;
+  background-color: white;
+  border-radius: 10px;
+  padding: 15px 15px 25px;
+  z-index: 1000;
+}
+.popover-close{
+  background-color: transparent;
+  color: white;
+  border: none;
+}
+.popover-signup{
+  background-color: transparent;
+  color: var(--color-assiganto-footer);
+  border: none;
+}
+.small-text{
+  font-size: 13px;
+  margin-right: 5px;
+}
+
+.explorer{
+  background-color: white;
+  box-shadow: 0 0 10px #0000001a;
+  padding: 15px;
+}
+.explorer ul{
+  list-style-type: none;
+  font-size: 13px;
+  line-height: 30px;
+  color: var(--color-blog-date);
+  cursor: pointer;
+
+}
+.explorer-ul{
+  margin-left: -30px;
+}
+.explorer-title{
+  margin-left: -30px;
+}
+/* Header End */
+
+/* Footer start */
+footer{
+  background-color: var(--color-assiganto-footer);
+}
+footer:not(:first-child){
+  border-top: 1px solid rgb(255,255, 255, 0.1);
+}
+footer .input-group-text{
+  background-color: var(--color-assiganto-newsletter-button-background);
+  color: white;
+  padding: 8px 17px;
+  font-weight: 400;
+  line-height: 20px;
+}
+.footer_send{
+color: green;
+}
+
+/* Footer End */
+
+/* Assiganto homepage start */
+.main-banner-content {
+  top: 15%;
+  left: 5%;
+}
+.main-banner-content h4{
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: var(--color-assiganto-product-hilighter);
+  margin: 0 0 12px;
+  letter-spacing: o.3px;
+  text-transform: uppercase;
+}
+.main-banner-content h5{
+  font-size: 32px;
+  line-height: 54px;
+  letter-spacing: -2px;
+  font-weight: 500;
+  text-transform: none;
+}
+.main-banner-content p{
+  font-size: 18px;
+  line-height: 28px;
+  color: var(--color-assiganto-header-main);
+  letter-spacing: o.4px;
+}
+
+.small-banner-content {
+  top: 25%;
+  left: 10%;
+  z-index: 999;
+}
+.small-banner-content h4{
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  color: var(--color-assiganto-product-hilighter);
+  margin: 0 0 12px;
+  letter-spacing: o.3px;
+  text-transform: uppercase;
+}
+.small-banner-content h5{
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0;
+  font-weight: 500;
+  text-transform: none;
+}
+.small-banner-content p{
+  font-size: 14px;
+  line-height: 22px;
+  color: var(--color-assiganto-header-main);
+  letter-spacing: o.4px;
+}
+.small-banner{
+  width: 49%;
+}
+.pub-header-upper{
+  height: 100px;
+  background-image: url('/public/images/background-images/image de fond 5.png');
+}
+
+.assiganto-home-wrapper-2 {
+  background-color: var(--color-assiganto-home-wrapper);
+  z-index: 999;
+}
+/* /* Assiganto homepage categories start  */
+.categories {
+  background-color: white;
+  box-shadow: 0 0 10px #0000001a;
+  padding: 15px;
+}
+.categories > div {
+  width: 24%;
+}
+.categories > div > div {
+  width: 60%;
+}
+/* /* Assiganto homepage categories end*/
+
+/* Assiganto Blog Card Start */
+.blog-card{
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+.blog-card img{
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.blog-content {
+  padding:15px;
+}
+
+.blog-content p.date {
+  font-size: 13px;
+  line-height: 24px;
+  text-transform: uppercase;
+  letter-spacing: 0;
+  font-weight: 400;
+  color: var(--color-blog-date);
+  padding:0;
+}
+
+.blog-content h5 {
+  font-size: 18px;
+  color: var(--color-assiganto-header-info);
+}
+
+.blog-content p.desc {
+  font-size: 13px;
+  line-height: 22px;
+  color: var(--color-blog-date);
+}
+.single-blog-card{
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+.single-blog-card img{
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.single-blog-card h3{
+  font: 24px;
+  font-weight: 600;
+  color: var(--color-assiganto-product-price);
+}
+.single-blog-card p{
+  color: #777777;
+  font-size: 14px;
+}
+.single-blog-card a{
+  color: #777777;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+/* Assiganto Blog Card End */
+
+/* Assiganto Featured Products Start */
+.product-card { 
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.product-card .product-image { 
+ height: 270px;
+}
+
+.product-card .product-image img { 
+  object-fit: contain;
+ }
+
+.product-card .product-image > img:last-child { 
+  display: none;
+}
+.product-card:hover .product-image > img:nth-child(1) { 
+  display: none;
+}
+.product-card:hover .product-image > img:last-child{ 
+  display: block;
+}
+.product-card:hover .action-bar {
+  right: 0px;
+}
+.product-card .product-details h6{ 
+  color: var(--color-assiganto-product-hilighter);
+  font-size: 13px;
+}
+
+.product-card .product-details h5{ 
+  color: var(--color-assiganto-product-price);
+  font-size: 15px;
+}
+
+.product-card .product-details p.price{ 
+  color: var(--color-assiganto-product-price);
+  font-size: 16px;
+}
+.product-card p.description{
+  font-size: 13px;
+  color: var(--color-blog-date);
+}
+.action-bar {
+  top: 10%;
+  right: -30px;
+  transition: 0.3s;
+}
+.wishlist-icon {
+  top: 2%;
+  right: 0px;
+}
+/* Assiganto Featured Products End */
+
+/* Assiganto Meilleurs ventes start */
+.special-product-card {
+  padding: 20px 10px;
+  border-radius: 10px;
+  background-color: white;
+}
+
+/* Assiganto meilleurs ventes End */
+
+/* Assiganto famous product Start */
+.famous-card .famous-content {
+  top:10%;
+  left:5%;
+}
+
+.famous-card img{
+  border-radius: 10px;
+}
+
+.famous-content h5 {
+  font-size: 13px;
+  line-height: 20px;
+  font-weight: 400px;
+  color: var( --color-assiganto-search-background);
+  text-transform: uppercase;
+}
+
+.famous-content h6 {
+  font-size: 24px;
+  line-height: 38px;
+  font-weight: 500px;
+  color: var( --color-assiganto-header-info);
+  margin-bottom: 7px;
+}
+
+.famous-content p {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 100px;
+  color: black;
+}
+/* Assiganto famous product End */
+
+/* Assiganto bestseller Start */
+.bestseller_image{
+ border-radius: 5px;
+}
+.special-product-content{
+  margin-left: 4px;
+}
+.special-product-content .brand{
+  color: var(--color-assiganto-header-info);
+}
+.special-product-content .title{
+  color: var(--color-assiganto-header-bottom);
+}
+.farmers-link{
+  color: var(--color-assiganto-header-info);
+  margin:5px;
+}
+
+.card-image{
+  width: 100px;
+  height: 100px;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
 }
 
-.App-link {
-  color: rgb(112, 76, 182);
+/* Assiganto bestseller End */
+.equipment-link{
+  transform: translate(65px, 95px);
+  color: var(--color-assiganto-header-bottom);
 }
 
-@keyframes App-logo-float {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(10px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
+/* Assiganto homepage End */
+
+/* Our store Start */
+.filter-card{
+  background-color: white;
+  border-radius: 10px;
+  padding: 15px 15px 25px;
 }
+
+.filter-title{
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 600;
+  color: var(--color-assiganto-product-price);
+  margin-bottom: 20px;
+}
+.filter-card ul,
+.filter-card .form-check-label{
+  list-style-type: none;
+  font-size: 13px;
+  line-height: 30px;
+  color: var(--color-blog-date);
+  cursor: pointer;
+}
+.filter-card .form-check-input:focus{
+  box-shadow: none;
+  border-color: rgba(0, 0, 0, 0.25);
+}
+.filter-card .form-check-input:checked{
+  background-color: var(--color-assiganto-search-background);
+  border-color: rgba(0, 0, 0, 0.25);
+}
+.sub-title{
+  font: 14px;
+  font-weight: 600;
+  color: var(--color-assiganto-product-price);
+  margin-bottom: 15px;
+  margin-top: 20px;
+}
+.colors {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.colors li{
+  width: 20px;
+  height: 20px;
+  background-color: var(--color-assiganto-header-bottom);
+  border-radius: 50%;
+}
+.random-products{
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+.random-products:first-child{
+  border-bottom: 1px solid #ededed;
+}
+.filter-sort-grid{
+  padding: 10px;
+  background-color: white;
+  border-radius: 10px;
+}
+.grid .list-icon{
+  background-color: #f2f2f2;
+  padding: 6px;
+  border-radius: 7px;
+  cursor: pointer;
+}
+.gr-12{
+  width: 100%;
+}
+.gr-6{
+  width: 49%;
+}
+.gr-4{
+  width: 32%;
+}
+.gr-3{
+  width: 24%;
+}
+.gr-12 .product-card{
+  display: flex;
+  gap: 20px;
+}
+.gr-6 .product-image{
+  width: 100%;
+}
+.gr-6 .product-image img{
+  margin: auto;
+  display: block;
+}
+.gr-12 .product-card .product-image{
+  width: 270px;
+}
+
+.gr-12 .action-bar{
+  top:17%;
+}
+/* Our store End */
+
+/* Contact Starts */
+.contact-inner-wrapper {
+  padding: 30px 20px;
+  border-radius: 20px;
+  background-color: white;
+  gap: 15px;
+}
+.contact-inner-wrapper > div {
+  width: 48%;
+}
+.contact-title{
+  font-size: 26px;
+  font-weight: 500;
+  line-height: 35px;
+  text-align: left;
+}
+.contact-inner-wrapper form .form-control{
+  background-color: var(--color-assiganto-home-wrapper);
+  border-radius: 10px;
+  border-color: transparent;
+  padding: 10px;
+}
+.contact-inner-wrapper ul {
+  list-style: none;
+}
+
+.contact-inner-wrapper address, .contact-inner-wrapper a, .contact-inner-wrapper p {
+  color: #777777;
+}
+/* Contact Ends */
+
+/* Compare products starts */
+.compare-product-card{
+  padding: 20px 15px;
+  background-color: white;
+  border-radius: 10px;
+}
+.compare-product-card .cross{
+  top:15px;
+  right: 15px;
+  width: 25px;
+  cursor: pointer;
+  padding: 3px;
+}
+.compare-product-details h5.title{
+  font-size: 15px;
+  line-height: 22px;
+  font-weight: 500;
+  color: var(--color-assiganto-product-price);
+}
+.compare-product-details h6.price{
+  font-size: 15px;
+  line-height: 22px;
+  font-weight: 400;
+}
+.compare-product-card .product-details{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0px;
+  border-top: 1px solid var(--color-assiganto-home-wrapper);
+}
+
+/* Compare products End */
+
+/* Wishlist stqrt */
+.wishlist-card .cross{
+  top:15px;
+  right: 15px;
+  width: 25px;
+  cursor: pointer;
+  padding: 3px;
+}
+.wishlist-details h5.title{
+  font-size: 15px;
+  line-height: 22px;
+  font-weight: 500;
+  color: var(--color-assiganto-product-price);
+}
+.wishlist-details h6.price{
+  font-size: 15px;
+  line-height: 22px;
+  font-weight: 400;
+}
+/* wishlist End */
+
+/* Auth card start */
+.auth-card{
+  padding: 20px;
+  background-color: white;
+  width: 500px;
+  margin: 30px auto;
+  border-radius: 10px;
+}
+.full-auth-card{
+  padding: 20px;
+  background-color: white;
+  width: auto;
+  margin: 30px auto;
+  border-radius: 10px;
+}
+.login-header{
+  flex: 2;
+  justify-content: space-between;
+}
+.login-picto{
+width: 80px;
+}
+.login-header-signup{
+  align-items: flex-end;
+  transform: translate(-80%, 20%);
+  }
+.login-header-singnup-text{
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 500;
+  letter-spacing: 0.3;
+  text-transform: uppercase;
+  color: #1e4b8a;
+  margin-bottom: -5px;
+  margin-left: 4px;
+}
+.login-space{
+flex: 10;
+justify-content: space-between;
+}
+.seller-pub{
+flex: 1;
+padding: 10px 10px 20px;
+}
+.pub-image{
+  padding: 10px 10px 20px;
+  }
+.seller-pub{
+  flex: 2;
+
+}
+.radio-box{
+  border: 1px solid #ced4da;
+  padding-left: 30px;
+  height: 80px;
+  background-color: var(--color-assiganto-home-wrapper);
+  color: var(--color-assiganto-header-bottom-drop-down-menu);
+  font-size: 14px;
+  border-radius: 10px;
+}
+.radio-box .form-check-label{
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 500;
+  color: var(--color-assiganto-product-price);
+  margin-bottom: 10px;
+}
+.login-bottom{
+flex: 1;
+}
+.auth-card h3{
+ font-size: 19px;
+ font-weight: 500;
+ color: #777777;
+}
+.auth-card .form-control{
+  height: 50px;
+  background-color: var(--color-assiganto-home-wrapper);
+  color: var(--color-assiganto-header-bottom-drop-down-menu);
+  font-size: 14px;
+  border-radius: 10px;
+  border-color: transparent;
+}
+.auth-card a{
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--color-assiganto-product-price);
+ }
+ .auth-card p{
+  font-size: 13px;
+  color: var(--color-assiganto-product-price);
+ }
+ .signup{
+  background-color: var(--color-assiganto-search-background);
+  color: var(--color-assiganto-header-bottom-drop-down-menu);
+  border: none;
+ }
+ .signup:hover{
+  background-color: var(--color-assiganto-header-bottom);
+  color: white;
+ }
+
+/* Auth card End */
+
+/* policy Start */
+.policy {
+  background-color: white;
+  padding: 30px;
+}
+
+/* Policy End */
+
+/* SingleProduct Starts */
+.main-product-image{
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+}
+.main-product-image>div{
+  border: 1px solid rgba(0, 0, 0, 0.25);
+}
+.main-product-image .js-image-zoom__zoomed-image{
+  left: 0px !important;
+  padding: 10px;
+  background-color: white;
+  border-radius: 10px;
+  z-index: 1000;
+}
+.main-product-image img{
+  width: 100% !important;
+  height: 600px !important;
+  object-fit: cover;
+}
+.other-product-image{
+  background-color: white;
+  padding: 20px;
+}
+.other-product-image>div{
+  padding: 20px;
+  width: 100px;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+}
+.main-product-details{
+  padding: 30px 20px;
+  border-radius: 10px;
+  background: 10px;
+}
+.main-product-details h3.title{
+  font-size: 18xp;
+  font-weight: 600;
+  color: var(--color-assiganto-product-price);
+  margin-bottom: 10px;
+}
+.main-product-details h3.price{
+  font-size: 16xp;
+  font-weight: 600;
+  line-height: 20px;
+  margin-bottom: 10px;
+}
+.border-bottom{
+  border-bottom: 1px solid rgb(0, 0, 0, 0.25);
+}
+.main-product-image img{
+  width: 100% !important;
+  height: 500px !important;
+  object-fit: cover;
+}
+.description-wrapper h4,
+.reviews-wrapper h3{
+font-size: 26px;
+color: var(--color-assiganto-product-price);
+margin-bottom: 10px;
+}
+.description-wrapper p{
+font-size: 14px;
+color: #777777;
+  
+}
+.review-inner-wrapper{
+ background-color: white;
+ padding: 30px;
+}
+.review:not(:last-child){
+ margin-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+}
+.review-head{
+border-bottom: 1px solid rgb(0, 0, 0, 0.1);
+padding: 20px;
+}
+.review-head a,
+.review-head p{
+  font-size: 14px;
+  color: #777777;
+  
+}
+.review-head h4{
+  font-size: 14px;
+  color: #777777;
+  
+}
+.review-head p{
+  
+}
+.review-form h4{
+  font-size: 16px;
+  color: #777777;
+}
+.review p{
+  font-size: 14px;
+  color: #777777;
+}
+.review form{
+  margin-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.main-product-details a.review-btn, .t-review{
+  color: #777777;
+  font-size: 13px;
+}
+.product-heading{
+  font-size: 14px;
+  color: var(--color-assiganto-product-price);
+  margin-bottom: 0px;
+}
+.product-data{
+  font-size: 13px;
+  color: #777777;
+  margin-bottom: 0px;
+}
+.main-product-details a {
+  font-size: 14px;
+  color: #777777;
+}
+
+/* SingleProduct  End */
+
+/* Cart starts */
+.cart-header, .cart-data {
+  border-top: 1px solid #eaeaea;
+}
+.cart-header h4{
+  font-size: 13px;
+  color: #777777;
+}
+.cart-col-1{
+  width: 40%;
+}
+.cart-col-1 p{
+  font-size: 14px;
+  color: #777777;
+}
+.cart-col-2{
+  width: 10%;
+}
+.cart-col-3{
+  width: 15%;
+}
+.cart-col-4{
+  width: 15%;
+}
+.card-data h5.price{
+  font-size: 14px;
+  color: #1c1c1b;
+}
+
+/* Cart Ends */
+
+
+/* Checkout Starts */
+#detailnavigation {
+  --bs-breadcrumb-divider: '>';
+}
+
+.breadcrumb .breadcrumb-item.active a{
+  color: var(--color-assiganto-header-bottom);
+}
+.breadcrumb .breadcrumb-item a:hover{
+  color: var(--color-assiganto-header-bottom);
+}
+.total{
+  font: 14px;
+  color: var(--color-assiganto-product-price);
+}
+.total-price{
+  font: 16px;
+  color: #777777;
+}
+
+
+
+/* Checkout Ends */
