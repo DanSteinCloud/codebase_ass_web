@@ -1,0 +1,9 @@
+version: '3.8'
+services:
+  app:
+    container_name: assiganto-agro-landing-page-c
+    image: assiganto-agro-landing-page-i
+    build: 
+      context: .
+    ports:
+      - 3000:30

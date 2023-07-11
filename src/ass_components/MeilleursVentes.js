@@ -7,7 +7,7 @@ const MeilleursVentes = (props) => {
     <div className='col-4 mb-3'>
         <div className='special-product-card'>
             <div className='d-flex justify-content-between'>
-                <div>
+                <div to='/product-details'>
                     <img src={props.image1} 
                          alt="meilleurs"
                          className='img-fluid bestseller_image' />
@@ -56,7 +56,7 @@ const MeilleursVentes = (props) => {
                             </div>
                         </div>
                         <div>
-                           <Link className='button'>Voir</Link>
+                           <Link className='button' to='product-details'>Voir plus</Link>
                         </div>    
                     </div>
                 </div>

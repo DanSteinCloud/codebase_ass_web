@@ -214,22 +214,22 @@ color: green;
 .main-banner-content h4{
   font-size: 16px;
   font-weight: 400;
-  line-height: 24px;
+  line-height: 34px;
   color: var(--color-assiganto-product-hilighter);
   margin: 0 0 12px;
   letter-spacing: o.3px;
   text-transform: uppercase;
 }
 .main-banner-content h5{
-  font-size: 32px;
+  font-size: 20px;
   line-height: 54px;
-  letter-spacing: -2px;
   font-weight: 500;
   text-transform: none;
+  color: var(--color-assiganto-header-info);
 }
 .main-banner-content p{
-  font-size: 18px;
-  line-height: 28px;
+  font-size: 16px;
+  line-height: 25px;
   color: var(--color-assiganto-header-main);
   letter-spacing: o.4px;
 }

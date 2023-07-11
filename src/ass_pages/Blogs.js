@@ -9,7 +9,7 @@ const Blogs = () => {
           image:'images/blog-images/delivery1.jpg',
           blog_category:'Grains',
           blog_title:'Livraison 24/72h en moyenne',
-          blog_description:"Jusqu'a ce jour le gouvermenet promet une baisse des denrees alimentaires...",
+          blog_description:"Nos articles sont en cours de révision. Le service de newsletter vous tient au courants des échances futures jusqu'en Septembre. De là vous retrouverez toutes nos publications en ligne à nouveau...",
           publish_date:'12/06/23',
           likes:650,
           views:254,
@@ -19,7 +19,7 @@ const Blogs = () => {
           image:'images/blog-images/security1.png',
           blog_category:'Grains',
           blog_title:'Payement 100% securise en ligne',
-          blog_description:"Jusqu'a ce jour le gouvermenet promet une baisse des denrees alimentaires...",
+          blog_description:"Nos articles sont en cours de révision. Le service de newsletter vous tient au courants des échances futures jusqu'en Septembre. De là vous retrouverez toutes nos publications en ligne à nouveau...",
           publish_date:'12/06/23',
           likes:650,
           views:254,
@@ -29,7 +29,7 @@ const Blogs = () => {
           image:'images/blog-images/quality1.jpg',
           blog_category:'Grains',
           blog_title:'6000 produits de qualite PRO',
-          blog_description:"Jusqu'a ce jour le gouvermenet promet une baisse des denrees alimentaires...",
+          blog_description:"Nos articles sont en cours de révision. Le service de newsletter vous tient au courants des échances futures jusqu'en Septembre. De là vous retrouverez toutes nos publications en ligne à nouveau...",
           publish_date:'12/06/23',
           likes:650,
           views:254,
@@ -39,7 +39,7 @@ const Blogs = () => {
           image:'images/blog-images/collectivity1.png',
           blog_category:'Grains',
           blog_title:'Particulier, Pro & Collectivite',
-          blog_description:"Jusqu'a ce jour le gouvermenet promet une baisse des denrees alimentaires...",
+          blog_description:"Nos articles sont en cours de révision. Le service de newsletter vous tient au courants des échances futures jusqu'en Septembre. De là vous retrouverez toutes nos publications en ligne à nouveau...",
           publish_date:'12/06/23',
           likes:650,
           views:254,
@@ -56,14 +56,14 @@ const Blogs = () => {
                 <div className='col-3'>
                     <div className='filter-card mb-3'>
                     <h3 className='filter-title'>
-                        Show BY categories
+                        Afficher par categories
                     </h3>
                     <div>
                         <ul className='ps-0'>
-                        <li>Watch</li>
-                        <li>TV</li>
-                        <li>Cameras</li>
-                        <li>Laptop</li>
+                        <li>Céréales</li>
+                        <li>Fruits et légumes</li>
+                        <li>Tubercules</li>
+                        <li>Minerais</li>
                         </ul>
                     </div>
                     </div>

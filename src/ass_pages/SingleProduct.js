@@ -193,7 +193,7 @@ const SingleProduct = () => {
             <div className='review-inner-wrapper'>
                 <div className='review-head d-flex justify-content-between align-items-end'>
                     <div>
-                        <h4 className='mb-2'>Customer review</h4>
+                        <h4 className='mb-2'>Notes des clients</h4>
                         <div className='d-flex align-items-center gap-10'>
                             <ReactStars
                                     count={5}
@@ -207,7 +207,7 @@ const SingleProduct = () => {
                     </div>   
                     {orderedProduct && 
                     <div>
-                        <a href='/#' className='text-dark text-decoration-underline '>Ajouter une precision</a>
+                        <a href='/#' className='text-dark text-decoration-underline '>Ajouter une précision</a>
                     </div>}
                 </div>
                 <div className='review-form py-4'>
@@ -234,8 +234,7 @@ const SingleProduct = () => {
                                         activeColor="#ffd700"
                                 />
                             </div>
-                            <p className='mt-3'>src/ass_pages/SingleProduct.js
-                            Line 8:28:  'setOrderedProduct' is assigned a value but never used </p>
+                            <p className='mt-3'>La echerche a été facile et l'experience d'achat conviviale. La livraison a été ponctuelle avec des mains habilesl pour le rangement a l'entrepot. </p>
                     </div>
                 </div>
                 <div className='reviews mt-4'>

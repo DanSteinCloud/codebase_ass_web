@@ -85,7 +85,7 @@ const Home = () => {
       image:'images/blog-images/delivery1.jpg',
       blog_category:'Grains',
       blog_title:'Livraison 24/72h en moyenne',
-      blog_description:"Jusqu'a ce jour le gouvermenet promet une baisse des denrees alimentaires...",
+      blog_description:"Nos articles sont en cours de révision. Le service de newsletter vous tient au courants des échances futures jusqu'en Septembre. De là vous retrouverez toutes nos publications en ligne à nouveau...",
       publish_date:'12/06/23',
       likes:650,
       views:254,
@@ -95,7 +95,7 @@ const Home = () => {
       image:'images/blog-images/security1.png',
       blog_category:'Grains',
       blog_title:'Payement 100% securise en ligne',
-      blog_description:"Jusqu'a ce jour le gouvermenet promet une baisse des denrees alimentaires...",
+      blog_description:"Nos articles sont en cours de révision. Le service de newsletter vous tient au courants des échances futures jusqu'en Septembre. De là vous retrouverez toutes nos publications en ligne à nouveau...",
       publish_date:'12/06/23',
       likes:650,
       views:254,
@@ -105,7 +105,7 @@ const Home = () => {
       image:'images/blog-images/quality1.jpg',
       blog_category:'Grains',
       blog_title:'6000 produits de qualite PRO',
-      blog_description:"Jusqu'a ce jour le gouvermenet promet une baisse des denrees alimentaires...",
+      blog_description:"Nos articles sont en cours de révision. Le service de newsletter vous tient au courants des échances futures jusqu'en Septembre. De là vous retrouverez toutes nos publications en ligne à nouveau...",
       publish_date:'12/06/23',
       likes:650,
       views:254,
@@ -115,7 +115,7 @@ const Home = () => {
       image:'images/blog-images/collectivity1.png',
       blog_category:'Grains',
       blog_title:'Particulier, Pro & Collectivite',
-      blog_description:"Jusqu'a ce jour le gouvermenet promet une baisse des denrees alimentaires...",
+      blog_description:"Nos articles sont en cours de révision. Le service de newsletter vous tient au courants des échances futures jusqu'en Septembre. De là vous retrouverez toutes nos publications en ligne à nouveau...",
       publish_date:'12/06/23',
       likes:650,
       views:254,
@@ -129,14 +129,14 @@ const Home = () => {
         <div className='row'>
           <div className='col-6'>
             <div className='main-banner position-relative'>
-              <img src="images/presentation_images/presentation1.png" 
+              <img src="images/presentation_images/1a Bannière 1920x1200.png" 
                    className="img-fluid rounded-3" 
                    alt="main-banner"/>
               <div className='main-banner-content position-absolute'>
-                <h4>Acheter au Champ</h4>
-                <h5>AGRO & MINIER</h5>
-                <p>De 10 kg<br/>à 100 tonnes</p>
-                <Link className='button'>Commencez ici</Link>
+                <h5>ASSIGANTO AGRO</h5>
+                <h4>Pour valoriser votre production</h4>
+                <p>Production Agricole<br/>Production minière</p>
+                <Link className='button' to='/signup'>Commencez ici</Link>
               </div> 
             </div>            
           </div>  
@@ -173,7 +173,7 @@ const Home = () => {
               </div> 
             </div>  
             <div className='small-banner position-relative'>
-              <img src="images/app_images/IMG-20230516-WA0018.jpg"
+              <img src="images/presentation_images/fruits-et-legumes.jpg"
                    className="img-fluid rounded-3" 
                    alt="small-banner"/>
               <div className='small-banner-content position-absolute'>

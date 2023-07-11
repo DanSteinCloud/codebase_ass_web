@@ -117,34 +117,34 @@ const Magasin = () => {
             </div>
             <div className='filter-card mb-3'>
             <h3 className='filter-title'>
-                Product Tags
+                Meilleurs recherches
               </h3>
               <div>
                 <div className="product-tags d-flex flex-wrap align-itens-center gap-10">
                   <span className="badge bg-light text-secondary rounded-3 py-2 px-3">
-                    Headphone
+                    Céréales
                   </span>
                   <span className="badge bg-light text-secondary rounded-3 py-2 px-3">
-                    Headphone
+                    Grains
                   </span>
                   <span className="badge bg-light text-secondary rounded-3 py-2 px-3">
-                    Headphone
+                    Légumes
                   </span>
                   <span className="badge bg-light text-secondary rounded-3 py-2 px-3">
-                    Headphone
+                    Fruits
                   </span>
                   <span className="badge bg-light text-secondary rounded-3 py-2 px-3">
-                    Headphone
+                    Tubercules
                   </span>
                   <span className="badge bg-light text-secondary rounded-3 py-2 px-3">
-                    Headphone
+                    Minerais
                   </span>
                 </div>
               </div>
             </div>
             <div className='filter-card mb-3'>
             <h3 className='filter-title'>
-                Random Products
+                En livraison gratuite
               </h3>
               <div>
                 <div className="random-products mb-3 d-flex">

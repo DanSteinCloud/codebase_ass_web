@@ -19,7 +19,7 @@ const {grid} = props;
                          <FiHeart className='fs-5'/>
                         </Link>
                     </div>
-            <div className='product-image'>
+            <div className='product-image' to='/product-details'>
                 <img src={props.image1}
                      className='img-fluid'
                      alt='pomme' />
@@ -38,10 +38,10 @@ const {grid} = props;
                     activeColor="#ffd700"
                 />
                 <p className={`description ${grid === 12 ? "d-block" : "d-none"}`}>
-                For example, ` is rendered as single opening curly quote (') and `` is a double curly opening quote
+                Riches en fibres et en acides gras poly-insaturés. Elles contribuent ainsi à réguler les lipides dans l'organisme, favorisant ainsi l'absence ou la baisse du cholestérol.
                 </p>
                 <p className='price'>{props.price} FCFA /Kg</p>
-                <Link className='button'>Ajouter</Link>
+                <Link className='button' to="/cart">Ajouter</Link>
             </div>
             <div className="action-bar position-absolute">
                    
