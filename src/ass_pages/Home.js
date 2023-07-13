@@ -129,7 +129,7 @@ const Home = () => {
         <div className='row'>
           <div className='col-6'>
             <div className='main-banner position-relative'>
-              <img src="images/presentation_images/1a Bannière 1920x1200.png" 
+              <img src="images/presentation_images/vedette_agro.png" 
                    className="img-fluid rounded-3" 
                    alt="main-banner"/>
               <div className='main-banner-content position-absolute'>

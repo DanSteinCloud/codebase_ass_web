@@ -51,22 +51,22 @@ const Magasin = () => {
           <div className='col-3'>
             <div className='filter-card mb-3'>
               <h3 className='filter-title'>
-                Show BY categories
+                Afficher par categories
               </h3>
               <div>
                 <ul className='ps-0'>
-                  <li>Watch</li>
-                  <li>TV</li>
-                  <li>Cameras</li>
-                  <li>Laptop</li>
+                  <li>General</li>
+                  <li>Vivrier</li>
+                  <li>Transformation</li>
+                  <li>Mineral</li>
                 </ul>
               </div>
             </div>
             <div className='filter-card mb-3'>
             <h3 className='filter-title'>
-                Filter By
+                Filtrer Par
               </h3>
-              <h5 className="sub-title">Availability</h5>
+              <h5 className="sub-title">Disponibilté</h5>
               <div>
               <div className="form-check">
                 <input className="form-check-input" type='checkbox' value='' id=''/>
@@ -81,24 +81,24 @@ const Magasin = () => {
                 </label>
               </div>
               </div>
-              <h5 className="sub-title">Price</h5>
+              <h5 className="sub-title">Prix</h5>
               <div className="d-flex align-items-center gap-10">
                 <div className="form-floating">
                     <input type="email" className="form-control" id="floatingInput" placeholder="Min." />
-                    <label for="floatingInput">From</label>
+                    <label for="floatingInput">De</label>
                 </div>
                 <div className="form-floating">
                     <input type="email" className="form-control" id="floatingInput1" placeholder="Min." />
-                    <label for="floatingInput">To</label>
+                    <label for="floatingInput">A</label>
                 </div>
               </div>
-              <h5 className="sub-title">Colors</h5>
+              <h5 className="sub-title">Types</h5>
               <div>
                 <div>
                   <Colors />
                 </div>
               </div>
-              <h5 className="sub-title">Size</h5>
+              <h5 className="sub-title">Quantité</h5>
               <div>
               <div className="form-check">
                 <input className="form-check-input" type='checkbox' value='' id=''/>
@@ -186,25 +186,25 @@ const Magasin = () => {
             <div className='filter-sort-grid mb-4'>
               <div className="d-flex justify-content-between align-items-center">
               <div className='d-flex align-items-center gap-10'>
-                <p className="mb-0 d-block" style={{"width":"100px"}}>Sort by :</p>
+                <p className="mb-0 d-block" style={{"width":"100px"}}>Rechercher :</p>
                 <select name="" className="form-control form-select" id="" defaultValue={"DEFAULT"}>
                   <option value="DEFAULT" disabled>
                     Choisir
                   </option>
                   <option value="manual">
-                    Featured
+                    Promotion
                   </option>
                   <option value="best-selling" selected="selected">
-                    Best Selling
+                    Meilleurs ventes
                   </option>
                   <option value="title-ascending">
-                    Flowers
+                    Bon marché
                   </option>
                   <option value="manual">
-                    Arial
+                    Astreintes
                   </option>
                   <option value="manual">
-                    neutral
+                    Rares
                   </option>
                 </select>
               </div>

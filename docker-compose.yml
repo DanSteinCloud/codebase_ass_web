@@ -1,9 +1,11 @@
 version: '3.8'
 services:
-  app:
-    container_name: assiganto-agro-landing-page-c
-    image: assiganto-agro-landing-page-i
+  ass-agro-landing-page:
+    container_name: ass-agro-landing-page-c
+    image: ass-agro-landing-page-i
     build: 
       context: .
     ports:
-      - 3000:30
+      - '3000:3000'
+    stdin_open: true
+    tty: true
