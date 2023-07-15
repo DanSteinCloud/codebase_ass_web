@@ -16,6 +16,8 @@ import SignUpSaved from './ass_pages/SignUp';
 import SingleBlog from './ass_pages/SingleBlog';
 import Blogs from './ass_pages/Blogs';
 import Cart from './ass_pages/Cart';
+import BusinessPackSignUp from './ass_pages/BusinessPackSignUp';
+import BusinessPackLogin from './ass_pages/BusinessPackLogin';
 import './App.css';
 import ShippingPolicy from './ass_pages/ShippingPolicy';
 import SingleProduct from './ass_pages/SingleProduct';
@@ -49,6 +51,8 @@ function App() {
        <Route path="product-details" element={<SingleProduct />}/>
        <Route path="cart" element={<Cart />}/>
        <Route path="checkout" element={<Checkout />}/>
+       <Route path="business-registration" element={<BusinessPackSignUp />}/>
+       <Route path="business-login" element={<BusinessPackLogin />}/>
       </Route>
     </Routes>
     </BrowserRouter>

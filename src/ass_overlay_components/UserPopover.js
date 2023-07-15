@@ -14,14 +14,14 @@ const UserPopover = () => {
                   <div className='d-flex flex-column justify-content-center align-items-center getting-started'>
                     <Link className='button' to='/login'>
                     <Popover.Close>
-                        <button className='popover-close'>Identifiez-vous</button>
+                        <button className='popover-close' to="/login">Identifiez-vous</button>
                     </Popover.Close>   
                     </Link>
                     <div className='d-flex mt-2'>
-                        <p className='small-text'>Nouveau client ?</p>&nbsp;
+                        <p className='small-text' to='/signup'>Nouveau client ?</p>&nbsp;
                         <Link className='small-text' to='/signup'>  
                         <Popover.Close>
-                        <button className='popover-signup'>Commencez ici</button>
+                        <button className='popover-signup' to='/signup'>Commencez ici</button>
                         </Popover.Close>
                         </Link>
                     </div>
@@ -31,7 +31,7 @@ const UserPopover = () => {
                    <div className='d-flex flex-column justify-content-begin align-items-center left'>
                    <h5 className=''>Vos listes</h5>
                     <ul className="" aria-labelledby="dropdownMenuButton1">
-                      <li><Link className="text-dark" to="">Creer une liste</Link></li>
+                      <li><Link className="text-dark" to="">Créer une liste</Link></li>
                       <li><Link className="text-dark" to="">Liste d'achat saisonniere</Link></li>
                       <li><Link className="text-dark" to="">Liste de matiere premiere</Link></li>
                       <li><Link className="text-dark" to="">Explorer les listes</Link></li>

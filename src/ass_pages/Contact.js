@@ -7,7 +7,7 @@ const Contact = () => {
   return (
     <>
     <Meta title={"Les blogs"}/>
-    <BreadCrumb title='Activités récentes'/>
+    <BreadCrumb title='Contact'/>
     <div className='contact-wrapper assiganto-home-wrapper-2 py-5'>
       <div className='container-xxl'>
               <div className='row'>

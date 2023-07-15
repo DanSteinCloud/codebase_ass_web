@@ -14,8 +14,8 @@ const ForgotPassword = () => {
         <div className='row'>
           <div className='col-12'>
             <div className='auth-card'>
-              <h3 className="text-center mb-3" >Reinitialisation de mot de passe</h3>
-              <p className="text-center mt-2 mb-3">Entrer le mot de passe associe a votre compte</p>
+              <h3 className="text-center mb-3" >Réinitialisation de mot de passe</h3>
+              <p className="text-center mt-2 mb-3">Entrer l'adresse mail associé à votre compte</p>
               <form action="" className="d-flex flex-column gap-15" >
                 <div>
                 <input type='email' name='email' className='form-control' placeholder='Email'></input>
@@ -23,7 +23,7 @@ const ForgotPassword = () => {
                 <div>
                   <div className="d-flex flex-column align-items-center justify-content-center gap-30">
                     <button to="/reset-password"className="button" type="submit">Envoyer</button>
-                    <Link to='/login'>Cancel</Link>
+                    <Link to='/login'>Annuler</Link>
                   </div>
                 </div>
               </form>

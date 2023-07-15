@@ -129,13 +129,13 @@ const Home = () => {
         <div className='row'>
           <div className='col-6'>
             <div className='main-banner position-relative'>
-              <img src="images/presentation_images/vedette_agro.png" 
+              <img src="images/presentation_images/vedette.png" 
                    className="img-fluid rounded-3" 
                    alt="main-banner"/>
               <div className='main-banner-content position-absolute'>
                 <h5>ASSIGANTO AGRO</h5>
                 <h4>Pour valoriser votre production</h4>
-                <p>Production Agricole<br/>Production minière</p>
+                <p>Productions Agricoles<br/>Productions minières</p>
                 <Link className='button' to='/signup'>Commencez ici</Link>
               </div> 
             </div>            
@@ -143,43 +143,44 @@ const Home = () => {
           <div className='col-6'>
             <div className='d-flex flex-wrap gap-10 justify-content-center align-items-center'>
             <div className='small-banner position-relative'>
-              <img src="images/presentation_images/presentation3.png" 
+              <img src="images/presentation_images/vedette1.png" 
                    className="img-fluid rounded-3" 
                    alt="small-banner"/>
               <div className='small-banner-content position-absolute'>
                 <h4>En croissance</h4>
-                <h5>Gains et céréales</h5>
-                <p>De 10 kg <br/>à 100 tonnes</p>
+                <h5>Tubercules</h5>
+                <p>De 10 kg <br/>à 50 tonnes</p>
               </div> 
             </div>  
             <div className='small-banner position-relative'>
-              <img src="images/presentation_images/presentation4.png" 
+              <img src="images/presentation_images/vedette2.png" 
                    className="img-fluid rounded-3" 
                    alt="small-banner"/>
               <div className='small-banner-content position-absolute'>
-              <h4>En Moisson</h4>
+              <h4>En Production</h4>
                 <h5>Matières premières</h5>
-                <p>De 10 kg <br/>à 100 tonnes</p>
+                <p>De 10 kg <br/>à 50 tonnes</p>
               </div> 
             </div>
             <div className='small-banner position-relative'>
-              <img src="images/presentation_images/presentation5.png" 
+              <img src="images/presentation_images/vedette3.png" 
                    className="img-fluid rounded-3" 
                    alt="small-banner"/>
               <div className='small-banner-content position-absolute'>
               <h4>En croissance</h4>
-                <h5>Tubercules</h5>
-                <p>De 10 kg <br/>à 100 tonnes</p>
+                <h5>Fruits et légumes</h5>
+                <p>De 10 kg <br/>à 50 tonnes</p>
               </div> 
             </div>  
             <div className='small-banner position-relative'>
-              <img src="images/presentation_images/fruits-et-legumes.jpg"
+              <img src="images/presentation_images/vedette4.png"
                    className="img-fluid rounded-3" 
                    alt="small-banner"/>
               <div className='small-banner-content position-absolute'>
                 <h4>En Moisson</h4>
-                <h5>Fruits et légumes</h5>
-                <p>De 10 kg <br/>à 100 tonnes</p>
+
+                <h5>Grains et céréales</h5>
+                <p>De 10 kg <br/>à 50 tonnes</p>
               </div> 
             </div>
             </div>
@@ -241,7 +242,7 @@ const Home = () => {
                 <div>
                   <h6>Les céréales</h6>
                 <Link className='farmers-link'>
-                  10 fermiers
+                  31 producteurs
                 </Link>
                 </div>
                 <img src='images/specimen-images/cereale4.jpg' className='img-fluid' alt='produits cerealiers' />
@@ -250,7 +251,7 @@ const Home = () => {
                 <div>
                   <h6>Les légumes</h6>
                   <Link className='farmers-link'>
-                  14 fermiers
+                  54 producteurs
                 </Link>
                 </div>
                 <img src='images/specimen-images/legume1.jpg' className='img-fluid' alt='legumes et fruits' />
@@ -259,7 +260,7 @@ const Home = () => {
                 <div>
                   <h6>Les tubercules</h6>
                 <Link className='farmers-link'>
-                  6 fermiers
+                  27 producteurs
                 </Link>
                 </div>
                 <img src='images/specimen-images/tubercule3.webp' className='img-fluid' alt='tubercules' />
@@ -268,7 +269,7 @@ const Home = () => {
                 <div>
                   <h6>Matières premières</h6>
                 <Link className='farmers-link'>
-                  2 fermiers
+                  11 producteurs
                 </Link>
                 </div>
                 <img src='images/specimen-images/coton1.jpg'  className='img-fluid' alt='coton' />

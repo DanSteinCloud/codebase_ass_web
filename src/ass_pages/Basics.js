@@ -2,7 +2,7 @@ import React from 'react'
 
 const Basics = () => {
   return (
-    <div>Basics</div>
+    <div>contenu vide</div>
   )
 }
 

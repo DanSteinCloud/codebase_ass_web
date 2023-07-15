@@ -44,7 +44,7 @@ const Magasin = () => {
   return (
     <>
     <Meta title={"En Stock"}/>
-    <BreadCrumb title='PRODUITS AGRO'/>
+    <BreadCrumb title='PRODUITS'/>
     <div className='store-wrapper assiganto-home-wrapper-2 py-5'>
       <div className='container-xxl'>
         <div className='row'>

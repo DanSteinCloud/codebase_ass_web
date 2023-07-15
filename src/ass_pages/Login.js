@@ -6,6 +6,7 @@ import BreadCrumb from '../ass_components/BreadCrumb'
 import Meta from '../ass_components/Meta'
 import { RiAccountCircleFill } from "react-icons/ri";
 import { Link } from 'react-router-dom';
+import useFormContext from "../hooks/useFormContext"
 
 export default class Login extends React.Component {
 
@@ -18,16 +19,17 @@ export default class Login extends React.Component {
 
   seller = false;
   buyer = false;
-  clicked = false;
+  clickedSeller = false;
+  clickedBuyer = false;
 
- setBuyer = () => {
-    this.buyer = true;
-    this.clicked = true;
+  setBuyer = () => {
+    this.buyer = !this.buyer;
+    this.clickedBuyer = !this.clickedBuyer;
     this.forceUpdate();
  }
  setSeller = () => {
-    this.seller = true;
-    this.clicked = true;
+    this.seller = !this.seller;
+    this.clickedSeller = !this.clickedSeller;
     this.forceUpdate();
  }
   componentDidMount() {
@@ -97,7 +99,7 @@ render() {
               <div className='login-form'>
               <h5 className="text-start mb-3" >SE CONNECTER</h5>
               <form action="" className="d-flex flex-column gap-15" >
-                {(this.buyer || (!this.clicked && !this.buyer))?
+              {((!this.buyer && !this.clickedSeller) || (this.buyer))?
                 <div className="radio-box form-check pt-2">
                   <input className="form-check-input" type='checkbox' value='' id='' onClick={this.setBuyer}/>
                   <label className="form-check-label" htmlFor="">
@@ -108,7 +110,7 @@ render() {
                 <div></div>
                 }
                 
-                {(this.seller || (!this.clicked && !this.seller))?
+                {((!this.seller && !this.clickedBuyer) || (this.seller))?
                 <div className="radio-box form-check pt-2 mr-4">
                   <input className="form-check-input" type='checkbox' value='' id='' onClick={this.setSeller}/>
                   <label className="form-check-label" htmlFor="">
@@ -120,12 +122,27 @@ render() {
                 }
         {this.buyer ?
         <div>
-            <div>
-            <input type='email' name='email' className='form-control' placeholder='Email du compte acheteur'></input>
-            </div>
-            <div className="mt-2">
-            <input type='password' name='password' className='form-control' placeholder='Mot de passe'></input>
-            </div>
+            
+            <div className="flex-col">
+                    <label htmlFor="billFirstName">Nom</label>
+                    <input
+                        type="email"
+                        id="billFirstName"
+                        name="billFirstName"
+                        placeholder="Email du compte acheteur"
+                        pattern="([A-Z])[\w+.]{1,}"
+                    />
+                </div>
+                <div className="flex-col">
+                    <label htmlFor="billFirstName">Nom</label>
+                    <input
+                        type="password"
+                        id="billFirstName"
+                        name="billFirstName"
+                        placeholder="Mot de passe"
+                        pattern="([A-Z])[\w+.]{1,}"
+                    />
+                </div>
             <div>
             <Link to='/forgot-password' className='small-text mt-2'>Mot de passe oublié ?</Link>
             <div className="mt-3 d-flex align-items-center justify-content-center gap-15">
@@ -134,20 +151,34 @@ render() {
             </div>
         </div> :
         <div></div>}
-        {!this.clicked ?
+        {!this.seller && !this.buyer && !this.clickedBuyer && !this.clickedseller  ?
             <div className="mt-3 d-flex align-items-center justify-content-center">
-                <button className="buttonBusiness">Créer un compte Assiganto business</button>
+                <button className="buttonBusiness" to="/business-registration">Créer un compte Assiganto business</button>
             </div>
             :<div></div> 
         }
         {this.seller ?
         <div>
-            <div>
-            <input type='email' name='email' className='form-control' placeholder='Email du compte vendeur'></input>
-            </div>
-            <div className="mt-2">
-            <input type='password' name='password' className='form-control' placeholder='Mot de passe'></input>
-            </div>
+            <div className="flex-col">
+                    <label htmlFor="billFirstName">Email</label>
+                    <input
+                        type="email"
+                        id="billFirstName"
+                        name="billFirstName"
+                        placeholder="Email du compte vendeur"
+                        pattern="([A-Z])[\w+.]{1,}"
+                    />
+                </div>
+                <div className="flex-col">
+                    <label htmlFor="billFirstName">Mot de passe</label>
+                    <input
+                        type="password"
+                        id="billFirstName"
+                        name="billFirstName"
+                        placeholder="Mot de passe"
+                        pattern="([A-Z])[\w+.]{1,}"
+                    />
+                </div>
             <div>
             <Link to='/forgot-password' className='small-text'>Mot de passe oublié ?</Link>
             <div className="mt-3 d-flex align-items-center justify-content-center gap-15">

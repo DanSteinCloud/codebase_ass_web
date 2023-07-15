@@ -18,16 +18,17 @@ export default class SignUp extends React.Component {
 
   seller = false;
   buyer = false;
-  clicked = false;
+  clickedSeller = false;
+  clickedBuyer = false;
 
- setBuyer = () => {
-    this.buyer = true;
-    this.clicked = true;
+  setBuyer = () => {
+    this.buyer = !this.buyer;
+    this.clickedBuyer = !this.clickedBuyer;
     this.forceUpdate();
  }
  setSeller = () => {
-    this.seller = true;
-    this.clicked = true;
+    this.seller = !this.seller;
+    this.clickedSeller = !this.clickedSeller;
     this.forceUpdate();
  }
   componentDidMount() {
@@ -75,7 +76,7 @@ render() {
    
   return (
     <>
-    <Meta title={"Login"}/>
+    <Meta title={"Registration"}/>
     <BreadCrumb title='Page de connexion'/>
     <div className='wishlist-wrapper assiganto-home-wrapper-2 py-3'>
     <div className='container-xxl'>
@@ -97,7 +98,7 @@ render() {
               <div className='login-form'>
               <h5 className="text-start mb-3" >CREATION DE COMPTE</h5>
               <form action="" className="d-flex flex-column gap-15" >
-                {(this.buyer || (!this.clicked && !this.buyer))?
+                {((!this.buyer && !this.clickedSeller) || (this.buyer))?
                 <div className="radio-box form-check pt-2">
                   <input className="form-check-input" type='checkbox' value='' id='' onClick={this.setBuyer}/>
                   <label className="form-check-label" htmlFor="">
@@ -108,7 +109,7 @@ render() {
                 <div></div>
                 }
                 
-                {(this.seller || (!this.clicked && !this.seller))?
+                {((!this.seller && !this.clickedBuyer) || (this.seller))?
                 <div className="radio-box form-check pt-2 mr-4">
                   <input className="form-check-input" type='checkbox' value='' id='' onClick={this.setSeller}/>
                   <label className="form-check-label" htmlFor="">
@@ -120,27 +121,77 @@ render() {
                 }
         {this.buyer ?
         <div>
-            <div className="mt-2">
-            <input type='text' name='email' className='form-control' placeholder='Nom'></input>
-            </div>
-            <div className="mt-2">
-            <input type='text' name='email' className='form-control' placeholder='Prenom'></input>
-            </div>
-            <div className="mt-2">
-            <input type='tel' name='email' className='form-control' placeholder='Telephone'></input>
-            </div>
-            <div className="mt-2">
-            <input type='email' name='email' className='form-control' placeholder='Email'></input>
-            </div>
-            <div className="mt-2">
-            <input type='email' name='email' className='form-control' placeholder='Adresse'></input>
-            </div>
-            <div className="mt-2">
-            <input type='password' name='password' className='form-control' placeholder='Mot de passe'></input>
-            </div>
-            <div className="mt-2">
-            <input type='password' name='password' className='form-control' placeholder='Confirmer le mot de passe'></input>
-            </div>
+            <div className="flex-col">
+                    <label htmlFor="billFirstName">Nom</label>
+                    <input
+                        type="text"
+                        id="billFirstName"
+                        name="billFirstName"
+                        placeholder="Nom du compte acheteur"
+                        pattern="([A-Z])[\w+.]{1,}"
+                    />
+                </div>
+                <div className="flex-col">
+                    <label htmlFor="billFirstName">Prenom</label>
+                    <input
+                        type="text"
+                        id="billFirstName"
+                        name="billFirstName"
+                        placeholder="Prenom"
+                        pattern="([A-Z])[\w+.]{1,}"
+                    />
+                </div>
+                <div className="flex-col">
+                    <label htmlFor="billFirstName">Telephone</label>
+                    <input
+                        type="phone"
+                        id="billFirstName"
+                        name="billFirstName"
+                        placeholder="Numero de telephone"
+                        pattern="([A-Z])[\w+.]{1,}"
+                    />
+                </div>
+                <div className="flex-col">
+                    <label htmlFor="billFirstName">Email</label>
+                    <input
+                        type="email"
+                        id="billFirstName"
+                        name="billFirstName"
+                        placeholder="Email du compte acheteur"
+                        pattern="([A-Z])[\w+.]{1,}"
+                    />
+                </div>
+                <div className="flex-col">
+                    <label htmlFor="billFirstName">Adresse</label>
+                    <input
+                        type="text"
+                        id="billFirstName"
+                        name="billFirstName"
+                        placeholder="Adresse"
+                        pattern="([A-Z])[\w+.]{1,}"
+                    />
+                </div>
+            
+                <div className="flex-col">
+                    <label htmlFor="billFirstName">Mot de passe</label>
+                    <input
+                        type="password"
+                        id="billFirstName"
+                        name="billFirstName"
+                        placeholder="Email"
+                        pattern="([A-Z])[\w+.]{1,}"
+                    />
+                </div>
+                <div className="flex-col">
+                    <label htmlFor="billFirstName">Confirmer</label>
+                    <input
+                        type="password"
+                        id="billFirstName"
+                        name="billFirstName"
+                        placeholder="Confirmez le mot de passe"
+                        pattern="([A-Z])[\w+.]{1,}"
+                    />
+                </div>
             <div>
             <div className="mt-3 d-flex align-items-center justify-content-center gap-15">
                 <button className="button" onClick={this.login}>Enregister</button>
@@ -148,35 +199,80 @@ render() {
             </div>
         </div> :
         <div></div>}
-        {!this.clicked ?
-            <div className="mt-3 d-flex align-items-center justify-content-center">
-                <button className="buttonBusiness">Créer un compte Assiganto business</button>
-            </div>
-            :<div></div> 
-        }
+       
         {this.seller ?
         <div>
-        <div className="mt-2">
-        <input type='text' name='email' className='form-control' placeholder='Nom'></input>
-        </div>
-        <div className="mt-2">
-        <input type='text' name='email' className='form-control' placeholder='Prenom'></input>
-        </div>
-        <div className="mt-2">
-        <input type='tel' name='email' className='form-control' placeholder='Telephone'></input>
-        </div>
-        <div className="mt-2">
-        <input type='email' name='email' className='form-control' placeholder='Email'></input>
-        </div>
-        <div className="mt-2">
-        <input type='email' name='email' className='form-control' placeholder='Adresse'></input>
-        </div>
-        <div className="mt-2">
-        <input type='password' name='password' className='form-control' placeholder='Mot de passe'></input>
-        </div>
-        <div className="mt-2">
-        <input type='password' name='password' className='form-control' placeholder='Confirmer le mot de passe'></input>
-        </div>
+        <div className="flex-col">
+                    <label htmlFor="billFirstName">Nom</label>
+                    <input
+                        type="text"
+                        id="billFirstName"
+                        name="billFirstName"
+                        placeholder="Nom du compte vendeur"
+                        pattern="([A-Z])[\w+.]{1,}"
+                    />
+                </div>
+                <div className="flex-col">
+                    <label htmlFor="billFirstName">Prenom</label>
+                    <input
+                        type="text"
+                        id="billFirstName"
+                        name="billFirstName"
+                        placeholder="Prenom"
+                        pattern="([A-Z])[\w+.]{1,}"
+                    />
+                </div>
+                <div className="flex-col">
+                    <label htmlFor="billFirstName">Telephone</label>
+                    <input
+                        type="phone"
+                        id="billFirstName"
+                        name="billFirstName"
+                        placeholder="Numero de telephone"
+                        pattern="([A-Z])[\w+.]{1,}"
+                    />
+                </div>
+                <div className="flex-col">
+                    <label htmlFor="billFirstName">Email</label>
+                    <input
+                        type="email"
+                        id="billFirstName"
+                        name="billFirstName"
+                        placeholder="Email du compte vendeur"
+                        pattern="([A-Z])[\w+.]{1,}"
+                    />
+                </div>
+                <div className="flex-col">
+                    <label htmlFor="billFirstName">Adresse</label>
+                    <input
+                        type="text"
+                        id="billFirstName"
+                        name="billFirstName"
+                        placeholder="Adresse"
+                        pattern="([A-Z])[\w+.]{1,}"
+                    />
+                </div>
+            
+                <div className="flex-col">
+                    <label htmlFor="billFirstName">Mot de passe</label>
+                    <input
+                        type="password"
+                        id="billFirstName"
+                        name="billFirstName"
+                        placeholder="Email"
+                        pattern="([A-Z])[\w+.]{1,}"
+                    />
+                </div>
+                <div className="flex-col">
+                    <label htmlFor="billFirstName">Confirmer</label>
+                    <input
+                        type="password"
+                        id="billFirstName"
+                        name="billFirstName"
+                        placeholder="Confirmez le mot de passe"
+                        pattern="([A-Z])[\w+.]{1,}"
+                    />
+                </div>
         <div>
         <div className="mt-3 d-flex align-items-center justify-content-center gap-15">
             <button className="button" onClick={this.login}>Enregister</button>
@@ -191,6 +287,12 @@ render() {
         }
                
               </form>
+              {!this.seller && !this.buyer && !this.clickedBuyer && !this.clickedseller  ?
+            <div className="mt-3 d-flex align-items-center justify-content-center" to='/business-registration'>
+                <Link className="buttonBusiness" to='/business-registration'>Créer un compte Assiganto business</Link>
+            </div>
+            :<div></div> 
+            }
                 </div>
                 <div className='seller-pub'>
                 <img src="images/assiganto-pub-svg/agro.png" 

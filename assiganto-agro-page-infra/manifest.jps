@@ -1,81 +1,156 @@
-type: install
-name: Mattermost Chat Service
+type: update
 version: 1.7
-id: mattermost
-categories: ["apps/dev-and-admin-tools", "apps/popular", "apps/collaboration"]
-displayName: Mattermost
-homepage: https://mattermost.com/
-logo: https://github.com/jelastic-jps/mattermost/raw/master/images/mattermost-logo-small.png
-description: Mattermost is an open-source, self-hostable online chat service with file sharing, search, and integrations. It is designed as an internal chat for organisations and companies, and mostly markets itself as an open-source alternative to Slack.
-ssl: true
+id: git-push-deploy
+name: Git-Push-Deploy Add-On
+homepage: https://jelastic.com/blog/git-push-deploy-to-containers/
+baseUrl: https://raw.githubusercontent.com/jelastic-jps/git-push-deploy/master
+description:
+  text: /text/description.md
+  short: Simple CI/CD pipeline for Git projects.
+logo: https://raw.githubusercontent.com/jelastic-jps/git-push-deploy/master/images/ci-cd-icon.png
 
-baseUrl: https://raw.githubusercontent.com/jelastic-jps/mattermost/master/
+targetEditions: [ "devops", "wordpress", "lite_do", "lite_vultr", "lite_gc", "ultimate", "light", "business" ]
 
-mixins:
-- configs/vers.yaml
+targetNodes:
+  nodeType:
+  - apache
+  - apache2
+  - apache2-ruby
+  - apache-python
+  - apache2-python
+  - apache-ruby
+  - glassfish
+  - glassfish3
+  - glassfish4
+  - golang
+  - javaengine
+  - jboss7
+  - jetty6
+  - jetty8
+  - jetty9
+  - nginxphp-dockerized
+  - nginxphp
+  - nginx-ruby
+  - nginxruby
+  - nodejs
+  - payara
+  - springboot
+  - tomcat
+  - tomcat7
+  - tomcat85
+  - tomcat6
+  - tomcat9
+  - tomee-dockerized
+  - tomee
+  - wildfly10
+  - wildfly11
+  - wildfly
+  - wildfly9
+  - wildfly-auto-cluster 
+  - litespeedphp
+  - lemp
+  - llsmp
+  
+settings:
+  fields:
+  - name: gitRepo
+    caption: Git Repo Url
+    type: string
+    default: ''
+    required: 'true'
+    regex: "^https?:\\/\\/.+$"
+    regexText: Incorrect URL. HTTPS link to Git repository is required.
+  - name: gitBranch
+    caption: Branch
+    type: string
+    default: master
+    required: 'true'
+  - name: gitUser
+    caption: User
+    type: string
+    default: ''
+    required: 'true'
+  - name: gitToken
+    caption: Token
+    type: string
+    default: ''
+    required: true
 
-nodes:
-  - image: mattermost/mattermost-team-edition:${globals.version_mattermost}
-    nodeGroup: cp
-    cloudlets: 16
-    skipNodeEmails: true
-    diskLimit: 50G
-    env:
-      JELASTIC_EXPOSE: 8065
-
-  - nodeType: postgresql
-    nodeGroup: sqldb
-    cloudlets: 16
-    diskLimit: 20G
+globals:
+  scriptName: git-push-redeploy
 
 onInstall:
-  - generatePassword
-  - createDB
-  - configureMattermost
+  script: /scripts/check-deployment-type.cs?_r=${fn.random}
+  next: setup
 
-onAfterRedeployContainer [cp]: configureMattermost
-
+onBeforeDelete: delete-redeploy-script
+onUninstall: delete-redeploy-script
+  
 actions:
-  generatePassword:
-    - script: "return {result: 0, password: '${fn.password(4)}'.toUpperCase() + '${fn.password(4)}'.toLowerCase() + '${fn.random(10)}' + '~!@#$%^&*()'['${fn.random(10)}'] };"
-    - setGlobals:
-        ADMIN_PASS: ${response.password}
-        PG_PASSWORD: ${nodes.sqldb.password}
-   
-  createDB:
-    - cmd[sqldb]:
-       - jem passwd set -p "${globals.PG_PASSWORD}"
-       - export PGPASSWORD='${globals.PG_PASSWORD}'; psql -U webadmin -d postgres -c "SELECT 1 FROM pg_database WHERE datname = 'mattermost'" | grep -q 1 || psql -U webadmin -d postgres -c "CREATE DATABASE mattermost;"
-      user: root
-  
-  configureMattermost:
-  - log: PostgreSQL password configuration
-  - cmd[cp]: |-
-      setcap cap_net_bind_service=+ep /mattermost/bin/mattermost
-      sed -i  -e 's/mmuser:mostest/webadmin:${globals.PG_PASSWORD}/g'  -e  's|"SiteURL": \"\",|"SiteURL": "'${env.url}'",|g'  -e  's|localhost/mattermost_test|sqldb:5432/mattermost|g' -e  's/charset=utf8mb4,utf8&readTimeout=30s&writeTimeout=30s/sslmode=disable&connect_timeout=10/g' -e  's|"ListenAddress": ":8000",|"ListenAddress": ":8080",|g' -e 's|"EnableLocalMode": false,|"EnableLocalMode": true,|g' /mattermost/config/config.json
-  - restartContainers [cp]
-  - cmd[cp]: |-
-      timeout 300 bash -c 'while [[ "$(curl -I http://localhost -s -o /dev/null -w ''%{http_code}'')" != "405" ]]; do sleep 3; done'
-      EMAIL="${user.email}" && EMAIL=${EMAIL%%@*} && echo ${EMAIL%%+*}
-  - setGlobals:
-      username: ${response.out}
-  - cmd[cp]: |-
-      mmctl user create --firstname ${globals.username} --system-admin --email ${user.email} --username ${globals.username} --password '${globals.ADMIN_PASS}' --local
+  setup:
+    - if ('${this.addon}' == 'maven'): 
+      - if (!nodes.build): 
+          addNodes: 
+              cloudlets: 16
+              nodeGroup: build
+              nodeType: maven3
+              displayName: Build Node
+              groupDisplayName: Build Nodes
+              metadata:
+                layer: build
+      - add-build-project
 
-success: |
-  ### Mattermost is ready
-  **URL** : [https://${env.domain}](https://${env.domain})  
-  **Admin email** : ${user.email}  
-  **Admin username** : ${globals.username}  
-  **Password** : ${globals.ADMIN_PASS}  
+    - if ('${this.addon}' == 'vcs'): 
+        add-vcs-project:
+          type: ${this.type}
+        
+    - create-redeploy-script
 
-  The instructions below can help you with further managing your online chat system:
 
-  * [Attach Public IP](https://docs.jelastic.com/public-ip)
-  * [Bind custom domain](https://docs.jelastic.com/custom-domains/#configure-dns)
-  * [Share access to the environment](http://docs.jelastic.com/share-environment)
-  * [Adjust automatic vertical scaling settings](http://docs.jelastic.com/automatic-vertical-scaling)
-  * [Monitor the statistics](http://docs.jelastic.com/view-app-statistics) & [view log files](https://docs.jelastic.com/view-log-files)
-  * [Access environment via SSH](https://docs.jelastic.com/ssh-access)
-  
-  To add custom domain name for your Mattermost installation follow the steps described in our [documentation](http://docs.jelastic.com/custom-domains)
+  create-redeploy-script:
+    script: /scripts/create-redeploy-script.cs?r_${fn.random}
+    url: ${baseUrl}/scripts/redeploy.cs
+    targetEnv: ${env.envName}
+    nodeGroup: cp
+    next: web-hook
+
+  web-hook:
+    script: /scripts/add-web-hook.cs?r_${fn.random}
+    params:
+      scriptName: ${globals.scriptName}
+      user: ${settings.gitUser}
+      repo: ${settings.gitRepo}
+      token: ${settings.gitToken}
+      callbackUrl: ${this.host}/${env.envName}-${globals.scriptName}?token=${this.token}&action=rebuild&appid=${this.appid}
+      envName: ${env.envName}
+      act: ${this.act}
+ 
+  add-vcs-project:
+    script: /scripts/add-vcs-project.cs?r_${fn.random}
+    params:
+      url: ${settings.gitRepo}
+      branch: ${settings.gitBranch}
+      user: ${settings.gitUser}
+      token: ${settings.gitToken}
+      type: ${this.type}
+      
+  add-build-project:
+    script: /scripts/add-build-project.cs?r_${fn.random}
+    params:
+      name: ${globals.scriptName}
+      url: ${settings.gitRepo}
+      branch: ${settings.gitBranch}
+      login: ${settings.gitUser}
+      password: ${settings.gitToken}
+      targetEnv: ${env.envName}
+      
+  delete-redeploy-script:
+    - jelastic.dev.scripting.DeleteScript:
+        name: ${env.envName}-${globals.scriptName}
+    - web-hook:
+        act: delete
+    - if (nodes.build): 
+        api: env.control.RemoveNode
+        nodeid: ${nodes.build.master.id}
+        
+success: /text/success.md
