@@ -2,6 +2,7 @@ import React from 'react';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import Layout from './ass_components/Layout';
 import Home from './ass_pages/Home';
+import TogoMap from './ass_pages/togomap';
 import About from './ass_pages/About';
 import Basics from './ass_pages/Basics';
 import Contact from './ass_pages/Contact';
@@ -32,6 +33,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Layout />}>
        <Route index element={<Home />}/>
+       <Route path='map' element={<TogoMap />} />
        <Route path="magasin" element={<Magasin />}/>
        <Route path="about" element={<About />}/>
        <Route path="basics" element={<Basics />}/>
