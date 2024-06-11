@@ -1,3 +1,25 @@
+.map-content {
+    position: relative;
+    width: fit-content;
+    transition: 0.2s ease-in;
+}
+
+.province-map {
+    opacity: 0;
+    transition: 0.2s ease-in;
+}
+
+.province-map:hover {
+    opacity: 1;
+    transition: 0.2s ease-in;
+}
+
+.region-color {
+    width: 100px;
+    height: 50px;
+    border: 1px solid;
+
+}
 .st0 {
     fill: #c8c8c898;
     stroke: blue;
