@@ -58,11 +58,13 @@ const TogoMap = () => {
         <div className="w-full mx-auto px-4">
           <div className="row justify-content-center">
             <div className="col-4">
+              <div className="region-details">
               {selectedRegion && <>
                 <h2>{selectedRegion.name}</h2>
                 <p>{selectedRegion.detail}</p>
                 <div className="region-color" style={{backgroundColor: `${selectedRegion.color}`}}></div>
               </>}
+              </div>
             </div>
             <div className="col-8 border map-content">
             <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="1028" height="1538" viewBox="0 0 1028 1538">
