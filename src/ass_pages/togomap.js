@@ -429,7 +429,7 @@ const TogoMap = () => {
     <>
       <section className="assiganto-home-wrapper-1 py-4">
         <div className="w-full mx-auto px-4">
-          <div className="row justify-content-center">
+          <div className="row justify-content-center flex-xl-row flex-lg-row flex-md-row flex-column-reverse">
             <div className="col-xl-6 col-md-6 col-sm-12">
               <h2 className="py-8 text-center">INFORMATIONS</h2>
               <div className="region-details">
