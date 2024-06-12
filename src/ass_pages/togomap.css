@@ -14,6 +14,9 @@
     align-items: center;
     padding: 10px;
 }
+.center-type {
+    font-weight: 600;
+}
 .province-map {
     opacity: 0;
     transition: 0.2s ease-in;
@@ -66,6 +69,7 @@
     
     .center-feedback-phones {
         display: flex;
+        flex-wrap: wrap;
         justify-content: start;
         align-items: center;
     }
