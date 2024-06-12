@@ -2,16 +2,65 @@
     position: relative;
     width: fit-content;
     transition: 0.2s ease-in;
+    height: max-content;
+        overflow: auto;
 }
 
 .province-map {
     opacity: 0;
     transition: 0.2s ease-in;
 }
+
 .region-details {
-    position: fixed;
-    max-width: 500px;
-}
+    width: 100%;
+        padding: 30px;
+        border: 1px solid;
+        border-radius: 11px;
+        margin-top: 2rem;
+    }
+    
+    .all-Centers {
+        width: 100%;
+        padding: 30px;
+        border: 1px solid;
+        border-radius: 11px;
+        margin-top: 2rem;
+    }
+    
+    .center-item {
+        display: flex;
+        justify-content: start;
+        align-items: start;
+        flex-direction: row;
+        margin-bottom: 0.5rem;
+    }
+    
+    .center-data {
+        padding: 10px 30px;
+    }
+    
+    .center-detail {
+        font-weight: 600;
+        font-size: 18px;
+    }
+    
+    .center-feedback {
+        width: 100%;
+        padding: 30px;
+        border: 1px solid;
+        border-radius: 11px;
+        margin-top: 2rem;
+    }
+    
+    .center-feedback-input {
+        width: 100%;
+    }
+    
+    .center-feedback-phones {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+    }
 .province-map:hover {
     opacity: 1;
     transition: 0.2s ease-in;
