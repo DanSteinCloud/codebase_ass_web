@@ -1,11 +1,19 @@
 .map-content {
     position: relative;
-    width: fit-content;
     transition: 0.2s ease-in;
     height: max-content;
         overflow: auto;
 }
+.togoMap-svg {
+    margin-left: -150px;
+}
 
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
 .province-map {
     opacity: 0;
     transition: 0.2s ease-in;
