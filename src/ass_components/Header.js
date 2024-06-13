@@ -89,23 +89,21 @@ const Header = () => {
             <div>
               <div className="dropdown">
                 <button className="btn btn-secondary dropdown-toggle bg-transparent border-0 gap-15 d-flex align-items-center" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                <FiList className='fs-7'/><span className='me-5 d-inline-block'>Tous les produits</span>
+                <FiList className='fs-7'/><span className='me-5 d-inline-block'>Toutes les categories</span>
                 </button>
                 <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                  <li><Link className="dropdown-item text-white" to="">Action</Link></li>
-                  <li><Link className="dropdown-item text-white" to="">Another action</Link></li>
-                  <li><Link className="dropdown-item text-white" to="">Something else here</Link></li>
+                  <li><Link className="dropdown-item text-white" to="">AGRO</Link></li>
+                  <li><Link className="dropdown-item text-white" to="">PASTORAL</Link></li>
+                  <li><Link className="dropdown-item text-white" to="">MATIERE PREMIERE </Link></li>
                 </ul>
               </div>
             </div>
             <div className='menu-links'>
               <div className='d-flex align-items-center gap-15'>
                <NavLink to="/">Accueil</NavLink>
-               <NavLink to="/map">Map</NavLink>
-               <NavLink to="/magasin">Stocks</NavLink>
-               <NavLink to="basics">Les détaillants</NavLink>
-               <NavLink to="basics">Les producteurs</NavLink>
-               <NavLink to="basics">Matières premières</NavLink>
+               <NavLink to="/map">Les marchés</NavLink>
+               <NavLink to="/magasin">Les détaillants</NavLink>
+               <NavLink to="basics">Coach</NavLink>
                <NavLink to="publications">Publications</NavLink>
                <NavLink to="contact">Contact</NavLink>
               </div>
