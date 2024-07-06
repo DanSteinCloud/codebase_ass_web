@@ -19,7 +19,7 @@ import Blogs from './ass_pages/Blogs';
 import Cart from './ass_pages/Cart';
 import BusinessPackSignUp from './ass_pages/BusinessPackSignUp';
 import BusinessPackLogin from './ass_pages/BusinessPackLogin';
-import './App.css';
+import './css/App.css';
 import ShippingPolicy from './ass_pages/ShippingPolicy';
 import SingleProduct from './ass_pages/SingleProduct';
 import RefundPolicy from './ass_pages/RefundPolicy';
